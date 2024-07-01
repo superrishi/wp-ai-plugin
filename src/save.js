@@ -16,48 +16,41 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save({ attributes }) {
-	const { backgroundImage, backgroundColor, title, description, ctaText, ctaUrl } = attributes;
+    const { backgroundImage, backgroundColor, title, description, ctaText, ctaUrl } = attributes;
 
-	return (
-		<div
-			{...useBlockProps.save()}
-			style={{
-				backgroundImage: `url(${backgroundImage})`,
-				backgroundColor: backgroundColor,
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
-				height: '300px',
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-				color: '#fff',
-				flexDirection: 'column',
-				textAlign: 'center',
-			}}
-		>
-			<RichText.Content
-				tagName="h2"
-				value={title}
-				style={{ marginBottom: '1rem' }}
-			/>
-			<RichText.Content
-				tagName="p"
-				value={description}
-				style={{ marginBottom: '1rem' }}
-			/>
-			<a
-				href={ctaUrl}
-				style={{
-					display: 'inline-block',
-					padding: '0.5rem 1rem',
-					backgroundColor: '#007cba',
-					color: '#fff',
-					textDecoration: 'none',
-					borderRadius: '4px',
-				}}
-			>
-				{ctaText}
-			</a>
-		</div>
-	);
+    return (
+        <div
+            {...useBlockProps.save()}
+            style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundColor: backgroundColor,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '300px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                flexDirection: 'column',
+                textAlign: 'center',
+                padding: '20px',
+            }}
+        >
+            <h2 style={{ marginBottom: '1rem' }}>{title}</h2>
+            <p style={{ marginBottom: '1rem' }}>{description}</p>
+            <a
+                href={ctaUrl}
+                style={{
+                    display: 'inline-block',
+                    padding: '0.5rem 1rem',
+                    backgroundColor: '#007cba',
+                    color: '#fff',
+                    textDecoration: 'none',
+                    borderRadius: '4px',
+                }}
+            >
+                {ctaText}
+            </a>
+        </div>
+    );
 }

@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, MediaUpload, InspectorControls, ColorPalette, RichText, URLInputButton } from '@wordpress/block-editor';
+import { useBlockProps, MediaUpload, InspectorControls, ColorPalette, URLInputButton } from '@wordpress/block-editor';
 import { Button, PanelBody, PanelRow, TextControl  } from '@wordpress/components';
 
 
@@ -98,22 +98,20 @@ export default function Edit({ attributes, setAttributes }) {
                     textAlign: 'center',
 				}}
 			>
-				<RichText
-                    tagName="h2"
+				<TextControl
+                    label={__('Title', 'background-image-block')}
                     value={title}
                     onChange={onChangeTitle}
-                    placeholder={__('Title', 'wp-ai-plugin')}
-                    style={{ marginBottom: '1rem' }}
-                />
-                <RichText
-                    tagName="p"
-                    value={description}
-                    onChange={onChangeDescription}
-                    placeholder={__('Description', 'wp-ai-plugin')}
                     style={{ marginBottom: '1rem' }}
                 />
                 <TextControl
-                    label={__('Button Text', 'wp-ai-plugin')}
+                    label={__('Description', 'background-image-block')}
+                    value={description}
+                    onChange={onChangeDescription}
+                    style={{ marginBottom: '1rem' }}
+                />
+                <TextControl
+                    label={__('Button Text', 'background-image-block')}
                     value={ctaText}
                     onChange={onChangeCtaText}
                     style={{ marginBottom: '1rem' }}
