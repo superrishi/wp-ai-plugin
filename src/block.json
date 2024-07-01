@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/wp-ai-plugin",
+	"version": "0.1.0",
+	"title": "WP AI Plugin",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A WordPress Block Plugin with a few demonstratable skill.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"backgroundImage": {
+			"type": "string",
+			"default": null
+		},
+        "backgroundColor": {
+            "type": "string",
+            "default": null
+        },
+		"title": {
+            "type": "string",
+            "source": "html",
+            "selector": "h2"
+        },
+        "description": {
+            "type": "string",
+            "source": "html",
+            "selector": "p"
+        },
+        "ctaText": {
+            "type": "string",
+            "default": "Click here"
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": "#"
+        }
+	},
+	"textdomain": "wp-ai-plugin",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
